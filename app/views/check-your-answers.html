@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="#" class="link-back">Back</a>
+
+      <h1 class="heading-large">
+        Check your answers before sending your application
+      </h1>
+
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `cya-questions-short` for short questions -->
+      <!--   * `cya-questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="govuk-check-your-answers cya-questions-short">
+        <div>
+          <dt class="cya-question">
+            What is the name of your VIN
+          </dt>
+          <dd class="cya-answer">
+            {{ data["vin-qs"] }}
+          </dd>
+          <dd class="cya-change">
+            <a href="/register-for-vin">
+              Change<span class="visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div>
+          <dt class="cya-question">
+            When you bought a VIN
+          </dt>
+          <dd class="cya-answer">
+            {{ data["vinarea"] }}
+          </dd>
+          <dd class="cya-change">
+            <a href="/vin-expiry">
+              Change<span class="visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+
+
+
+      </dl>
+
+
+
+
+
+      <h2 class="heading-medium">Now send your application</h2>
+
+      <p class="text">
+        By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+      <div class="form-group">
+        <a href="/confirmation-page" class="button">Accept and send application</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
